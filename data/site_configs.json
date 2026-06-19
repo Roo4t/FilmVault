@@ -1,0 +1,180 @@
+{
+  "_comment": "Site config for VideoMetaScraper. When a site changes its HTML, only update this file.",
+  "version": "2.0",
+  "sites": {
+    "javbus": {
+      "name": "javbus",
+      "label": "JavBus",
+      "base_urls": [
+        "https://www.javbus.com",
+        "https://www.javbus.cc",
+        "https://www.javbus.pw"
+      ],
+      "detail_url_template": "/{code}",
+      "priority": 10,
+      "timeout": 30,
+      "selectors": {
+        "title": {
+          "name": "title",
+          "selector": "h3",
+          "fallback": "title",
+          "required": true
+        },
+        "poster": {
+          "name": "poster",
+          "selector": ".bigImage",
+          "attr": "href",
+          "required": false
+        },
+        "genres": {
+          "name": "genres",
+          "selector": "span.genre a",
+          "required": false
+        },
+        "actors": {
+          "name": "actors",
+          "selector": ".star-box a, .avatar-box a",
+          "required": false
+        },
+        "info_area": {
+          "name": "info_area",
+          "selector": ".col-md-3.info",
+          "required": false
+        },
+        "validation": {
+          "name": "validation",
+          "selector": "h3, .bigImage",
+          "required": true
+        }
+      }
+    },
+    "javdb": {
+      "name": "javdb",
+      "label": "JavDB",
+      "base_urls": [
+        "https://javdb.com",
+        "https://javdb8.com"
+      ],
+      "search_url_template": "/search?q={code}&f=all",
+      "detail_url_template": "/v/{id}",
+      "priority": 15,
+      "timeout": 30,
+      "requires_search": true,
+      "selectors": {
+        "search_result": {
+          "name": "search_result",
+          "selector": ".item a[href*='/v/'], .movie-list .item a[href*='/v/']",
+          "attr": "href",
+          "required": true
+        },
+        "title": {
+          "name": "title",
+          "selector": "h2, .title, .video-title",
+          "required": true
+        },
+        "poster": {
+          "name": "poster",
+          "selector": "[itemprop='image'], img.cover",
+          "attr": "src",
+          "required": false
+        },
+        "genres": {
+          "name": "genres",
+          "selector": ".tag, .tags a, .genre a",
+          "required": false
+        },
+        "actors": {
+          "name": "actors",
+          "selector": ".actor-list a, .star-list a",
+          "required": false
+        },
+        "info_area": {
+          "name": "info_area",
+          "selector": ".panel-body, .video-panel, .movie-info",
+          "required": false
+        }
+      }
+    },
+    "avsox": {
+      "name": "avsox",
+      "label": "AVSOX",
+      "base_urls": [
+        "https://avsox.website"
+      ],
+      "detail_url_template": "/video/{code}",
+      "priority": 20,
+      "timeout": 30,
+      "selectors": {
+        "title": {
+          "name": "title",
+          "selector": "h3",
+          "required": true
+        },
+        "poster": {
+          "name": "poster",
+          "selector": ".bigImage",
+          "attr": "href",
+          "required": false
+        },
+        "genres": {
+          "name": "genres",
+          "selector": "span.genre a",
+          "required": false
+        },
+        "actors": {
+          "name": "actors",
+          "selector": ".star-box a, .avatar-box a",
+          "required": false
+        },
+        "validation": {
+          "name": "validation",
+          "selector": ".bigImage, .col-md-3.info",
+          "required": true
+        }
+      }
+    },
+    "javlib": {
+      "name": "javlib",
+      "label": "JavLib",
+      "base_urls": [
+        "https://www.javlibrary.com",
+        "https://javlibrary.net"
+      ],
+      "search_url_template": "/search?q={code}",
+      "detail_url_template": "/video/{id}",
+      "priority": 25,
+      "timeout": 30,
+      "requires_search": true,
+      "selectors": {
+        "search_result": {
+          "name": "search_result",
+          "selector": "a.movie[href*='/video/']",
+          "attr": "href",
+          "required": true
+        },
+        "title": {
+          "name": "title",
+          "selector": "h3.video-title",
+          "fallback": "title",
+          "required": true
+        },
+        "poster": {
+          "name": "poster",
+          "selector": "img.video-cover, meta[property='og:image']",
+          "attr": "src",
+          "required": false
+        },
+        "genres": {
+          "name": "genres",
+          "selector": "span.video-genre",
+          "required": false
+        },
+        "actors": {
+          "name": "actors",
+          "selector": "span.video-actress a",
+          "required": false
+        }
+      }
+    }
+  }
+}

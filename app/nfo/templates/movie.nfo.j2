@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<movie>
+{%- if title %}
+    <title>{{ title }}</title>
+{%- endif %}
+{%- if originaltitle %}
+    <originaltitle>{{ originaltitle }}</originaltitle>
+{%- endif %}
+{%- if sorttitle %}
+    <sorttitle>{{ sorttitle }}</sorttitle>
+{%- endif %}
+{%- if plot %}
+    <plot>{{ plot }}</plot>
+{%- endif %}
+{%- if outline %}
+    <outline>{{ outline }}</outline>
+{%- endif %}
+{%- if thumb %}
+    <thumb aspect="poster">{{ thumb }}</thumb>
+{%- endif %}
+{%- for art in fanart %}
+    <fanart>
+        <thumb>{{ art }}</thumb>
+    </fanart>
+{%- endfor %}
+{%- for g in genre %}
+    <genre>{{ g }}</genre>
+{%- endfor %}
+{%- for t in tag %}
+    <tag>{{ t }}</tag>
+{%- endfor %}
+{%- if year %}
+    <year>{{ year }}</year>
+{%- endif %}
+{%- if premiered %}
+    <premiered>{{ premiered }}</premiered>
+{%- endif %}
+{%- if runtime %}
+    <runtime>{{ runtime }}</runtime>
+{%- endif %}
+{%- if rating is not none %}
+    <rating>{{ rating }}</rating>
+{%- endif %}
+{%- if votes is not none %}
+    <votes>{{ votes }}</votes>
+{%- endif %}
+{%- if director %}
+    <director>{{ director }}</director>
+{%- endif %}
+{%- if studio %}
+    <studio>{{ studio }}</studio>
+{%- endif %}
+{%- for a in actor %}
+    <actor>
+        <name>{{ a.name }}</name>
+    {%- if a.role %}
+        <role>{{ a.role }}</role>
+    {%- endif %}
+    {%- if a.thumb %}
+        <thumb>{{ a.thumb }}</thumb>
+    {%- endif %}
+    </actor>
+{%- endfor %}
+{%- if country %}
+    <country>{{ country }}</country>
+{%- endif %}
+{%- if mpaa %}
+    <mpaa>{{ mpaa }}</mpaa>
+{%- endif %}
+{%- if set_ %}
+    <set>{{ set_ }}</set>
+{%- endif %}
+</movie>

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project data (runtime)
+data/scraper.db*
+data/not_found_cache.json
+data/posters/
+data/thumbs/
+
+# Screenshots — include only safe/censored ones
+assets/screenshots/02_files.png
+assets/screenshots/03_browser.png
+
+# PyInstaller
+*.spec
