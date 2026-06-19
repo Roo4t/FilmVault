@@ -1,6 +1,6 @@
 # FilmVault
 
-> 现代化视频元数据刮削器 — 智能文件名解析 · 多源并行聚合 · Kodi NFO 生成
+> 本地视频元数据刮削器 — 智能文件名解析 · 多源并行聚合 · Kodi NFO 生成
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Flet](https://img.shields.io/badge/Flet-0.85-7C3AED)](https://flet.dev)
